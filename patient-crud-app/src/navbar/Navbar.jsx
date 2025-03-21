@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "../assets/hospital.png"; 
+import { Context } from '../App';
 
-export function Navbar() {
+
+
+export function Navbar(props) {
+    let passed_data = useContext(Context)
+
     return (
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
           <a className="navbar-brand" href="/">
-          <img src={logo} alt="Hospital Logo" style={{ height: "40px" }} className="me-2" />
+          <img src={logo} alt="Hospital Logo" style={{ height: "40px" }} className="me-2" /> {props.mainHeading}, {passed_data}
                     </a>
 
           <button 
@@ -28,7 +33,7 @@ export function Navbar() {
                       <a className="nav-link" href="/patients">View Patients</a>
                   </li>
                   <li className="nav-item">
-                      <a className="nav-link" href="/appointments">Add Patient</a>
+                      <a className="nav-link" href="/add_patients">Add Patient</a>
                   </li>
                   
               </ul>

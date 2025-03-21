@@ -1,13 +1,13 @@
 import { Navbar } from "../navbar/Navbar";
 
-export function Header(){
+export function Header(props){
     return (
       
        
         <>
-        <header className="bg-light text-dark py-3 text-center w-100 position-fixed top-0 start-0" >
+        <header className="bg-dark text-light py-3 text-center w-100 position-fixed top-0 start-0" >
             <h1 className="mb-0">Patient Management</h1>
-           <Navbar></Navbar>
+           <Navbar mainHeading={props.mainHeading}></Navbar>
         </header>
         
         {/* <header className="bg-primary text-light py-3 text-center w-100 position-fixed top-0 start-0">
